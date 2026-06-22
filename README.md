@@ -49,6 +49,17 @@ python qigua_agent.py "要不要现在重构登录模块？"
 
 > 模型名提示：`deepseek-chat` / `deepseek-reasoner` 自 **2026-07-24** 起迁移到 `deepseek-v4-flash`（非思考/思考模式）。届时把 `DEEPSEEK_MODEL` 改为 `deepseek-v4-flash` 即可。
 
+## 维护：同步两套拷贝
+
+模式 A 的 `claude-skill/SKILL.md` 是已安装 skill（`~/.claude/skills/qigua/SKILL.md`）的拷贝。日常在已安装那份上迭代后，跑一键同步脚本回灌仓库：
+
+```powershell
+./sync-skill.ps1            # 同步 + 显示差异
+./sync-skill.ps1 -Push      # 同步并自动 commit & push
+```
+
+> 脚本只同步模式 A 的 `SKILL.md`。模式 B 的 `SYSTEM_PROMPT.md` 是独立手写文件——若改的是解卦方法论本身，需手动跟进，避免两套模式漂移。
+
 ## 免责声明 · Disclaimer
 
 本项目是**结构化的换角度思考工具 + 情绪反思工具**，不是预测，也**不得**用于医疗、具体投资标的买卖、法律行动的决策依据。Entertainment & self-reflection only — not a predictor, and not a basis for medical, investment, or legal decisions.
