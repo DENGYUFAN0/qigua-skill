@@ -45,9 +45,9 @@ export DEEPSEEK_API_KEY=sk-xxx          # Windows: $env:DEEPSEEK_API_KEY="sk-xxx
 python qigua_agent.py "要不要现在重构登录模块？"
 ```
 
-`qigua_agent.py` 在本地用 `secrets` 真随机摇卦、算好本卦/变卦/体用/旺衰，再调 DeepSeek（默认 `deepseek-reasoner` 思考模式）解卦。系统提示词见 [`deepseek-mode/SYSTEM_PROMPT.md`](deepseek-mode/SYSTEM_PROMPT.md)，可直接搬进任何 DeepSeek-API agent。
+`qigua_agent.py` 在本地用 `secrets` 真随机摇卦、算好本卦/变卦/体用/旺衰，再调 DeepSeek（默认 `deepseek-v4-flash`）解卦。系统提示词见 [`deepseek-mode/SYSTEM_PROMPT.md`](deepseek-mode/SYSTEM_PROMPT.md)，可直接搬进任何 DeepSeek-API agent。
 
-> 模型名提示：`deepseek-chat` / `deepseek-reasoner` 自 **2026-07-24** 起迁移到 `deepseek-v4-flash`（非思考/思考模式）。届时把 `DEEPSEEK_MODEL` 改为 `deepseek-v4-flash` 即可。
+> 模型名提示：原非思考/思考模式别名已于 **2026-07-24** 下线，统一迁移到 `deepseek-v4-flash`，本项目已切换使用该别名。
 
 ## 维护：同步两套拷贝
 

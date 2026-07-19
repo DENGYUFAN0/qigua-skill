@@ -189,9 +189,8 @@ def main():
         system_prompt = f.read()
 
     client = OpenAI(api_key=key, base_url="https://api.deepseek.com")
-    # deepseek-reasoner = 思考模式。注意：该别名于 2026-07-24 起迁移到 deepseek-v4-flash，
-    # 届时把默认值改为 deepseek-v4-flash 即可（仍走思考模式）。
-    model = os.environ.get("DEEPSEEK_MODEL", "deepseek-reasoner")
+    # deepseek-v4-flash：原思考模型别名已于 2026-07-24 下线并迁移至此。
+    model = os.environ.get("DEEPSEEK_MODEL", "deepseek-v4-flash")
 
     resp = client.chat.completions.create(
         model=model,
